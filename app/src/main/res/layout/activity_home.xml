@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  tools:context=".HomeActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar"/>
+
+    <fragment
+        android:id="@+id/nearby_panel_container"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        class="com.example.tahfiz.medicassist.NearbyPanel"
+        tools:layout="@layout/nearby_panel" />
+
+    <fragment
+        android:id="@+id/graph_panel_container"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_toRightOf="@+id/nearby_panel_container"
+        android:layout_alignParentBottom="true"
+        class="com.example.tahfiz.medicassist.GraphPanel"
+        tools:layout="@layout/graph_panel" />
+
+
+
+</RelativeLayout>

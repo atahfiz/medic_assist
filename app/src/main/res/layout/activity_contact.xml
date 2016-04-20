@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tahfiz.medicassist.Contacts.ContactActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"/>
+
+    <fragment
+        android:id="@+id/addFunctionFragment"
+        android:layout_below="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        class="com.example.tahfiz.medicassist.Contacts.ContactPickFragment"
+        tools:layout="@layout/contact_pick_fragment"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/listContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/addFunctionFragment"
+        tools:layout="@layout/contact_list_fragment"/>
+
+</RelativeLayout>

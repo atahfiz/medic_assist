@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Medic Assist</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_contact">Contact Emergency</string>
+    <string name="title_activity_nearby_places">Nearby</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="title_dropdown_age">Select Your Age</string>
+
+    <string name="title_activity_graph">Analysis</string>
+    <string name="title_activity_guide">GuideActivity</string>
+
+    <string-array name="dropdown_age">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+</resources>

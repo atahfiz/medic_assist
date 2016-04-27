@@ -10,6 +10,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import com.example.tahfiz.medicassist.R;
 
 public class ContactActivity extends AppCompatActivity implements ContactPickFragment.ContactPickListener {
 
+    private static final String TAG = ContactActivity.class.getSimpleName();
     private Toolbar toolbar;
     private ContactData contact;
     private ContactListFragment contactListFragment;
@@ -114,7 +116,7 @@ public class ContactActivity extends AppCompatActivity implements ContactPickFra
             //Check wheter Contact Data exists or nor
             if (contact != null && (!repo.checkContact(contact.getPhoneNum()))){
                 repo.insertContact(contact);
-                System.out.println("Contact has been insert");
+                Log.d(TAG,"Contact has been inserted");
             }else {
                 Toast.makeText(this,"Contact already exist",Toast.LENGTH_SHORT).show();
             }

@@ -24,7 +24,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name=".Settings.MyApplication">
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name" >
@@ -61,20 +62,17 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
-            android:name=".SettingActivity"
-            android:label="@string/title_activity_setting"
-            android:parentActivityName=".NearbyPlaces.NearbyPlacesActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.tahfiz.medicassist.NearbyPlaces.NearbyPlacesActivity" />
-        </activity>
-        <activity
             android:name=".Graph.GraphActivity"
             android:label="@string/title_activity_graph" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
+
+        <activity
+            android:name=".Settings.SettingsActivity"
+            android:label="Settings"/>
+
         <activity
             android:name=".GuideActivity"
             android:label="@string/title_activity_guide" >

@@ -3,19 +3,24 @@ package com.example.tahfiz.medicassist;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.example.tahfiz.medicassist.Contacts.ContactActivity;
+import com.example.tahfiz.medicassist.Settings.AppSettings;
+import com.example.tahfiz.medicassist.Settings.SettingsActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private static final int SETTING_REQUEST = 1000;
     private Toolbar toolbar;
     private NearbyPanel nearbyPanel;
     private GraphPanel graphPanel;
+    private TextView usernameTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,8 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        initViews();
+        fillViews();
 
         nearbyPanel = new NearbyPanel();
         setFragment(nearbyPanel);
@@ -33,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         graphPanel = new GraphPanel();
         setFragment(graphPanel);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,6 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()){
             case R.id.action_settings:
+                SettingsActivity.startThisActivityForResult(this, SETTING_REQUEST);
                 return true;
 
             case R.id.action_add:
@@ -61,6 +68,25 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case SETTING_REQUEST:
+                fillViews();
+        }
+        super.onActivityResult(requestCode,resultCode,data);
+    }
+
+    private void initViews() {
+        usernameTxt = (TextView) findViewById(R.id.txt_username);
+    }
+
+    private void fillViews() {
+        AppSettings settings = AppSettings.getSettings(this);
+
+        usernameTxt.setText(settings.getUsername());
     }
 
     public void setFragment(Fragment fragment) {

@@ -23,6 +23,15 @@
         class="com.example.tahfiz.medicassist.GraphPanel"
         tools:layout="@layout/graph_panel" />
 
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Username"
+        android:layout_above="@+id/nearby_panel_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp" />
 
 
 </RelativeLayout>

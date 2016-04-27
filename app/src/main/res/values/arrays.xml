@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="age_categories">
+        <item>Below 18 years old</item>
+        <item>18 to 25 years old</item>
+        <item>26 to 35 years old</item>
+        <item>36 to 45 years old</item>
+    </string-array>
+    <string-array name="category_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+</resources>
